@@ -33,7 +33,7 @@ function ConvertFrom-ReleaseManifest {
         throw 'Release manifest is not valid JSON.'
     }
 
-    if ($manifest.schemaVersion -ne 1) {
+    if ($manifest.schemaVersion -ne 2) {
         throw 'Release manifest has an unsupported schemaVersion.'
     }
     if ($manifest.appId -ne $ExpectedAppId) {
@@ -44,6 +44,9 @@ function ConvertFrom-ReleaseManifest {
     }
     if ($manifest.version -notmatch '^[0-9]+\.[0-9]+\.[0-9]+$') {
         throw 'Release manifest has an invalid version.'
+    }
+    if ($manifest.releaseTag -notmatch '^v[0-9]+\.[0-9]+\.[0-9]+$') {
+        throw 'Release manifest has an invalid releaseTag.'
     }
     if ($manifest.sha256 -notmatch '^[0-9a-fA-F]{64}$') {
         throw 'Release manifest has an invalid sha256.'
@@ -64,16 +67,17 @@ function ConvertFrom-ReleaseManifest {
     }
 
     $expectedPath = "$ExpectedReleasePathPrefix" +
-        "v$($manifest.version)/2095Sport-webOS-v$($manifest.version).ipk"
+        "$($manifest.releaseTag)/2095Sport-webOS-v$($manifest.version).ipk"
     if ($assetUri.AbsolutePath -cne $expectedPath -or $assetUri.Query -or $assetUri.Fragment) {
         throw 'Release manifest assetUrl does not match the expected release asset.'
     }
 
     [PSCustomObject] @{
-        schemaVersion = 1
+        schemaVersion = 2
         appId = $ExpectedAppId
         title = $ExpectedTitle
         version = [string] $manifest.version
+        releaseTag = [string] $manifest.releaseTag
         assetUrl = $assetUri.AbsoluteUri
         sha256 = ([string] $manifest.sha256).ToLowerInvariant()
         size = $size
