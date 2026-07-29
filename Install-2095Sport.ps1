@@ -88,21 +88,30 @@ function Get-InstalledAppVersion {
     )
 
     $text = [string]::Join([Environment]::NewLine, [string[]] $Output)
-    $blocks = $text -split '(?m)^\s*--\s*$'
-    foreach ($block in $blocks) {
-        $idMatch = [regex]::Match($block, '(?m)^\s*id\s*:\s*(?<value>[^\r\n]+?)\s*$')
-        if (-not $idMatch.Success -or $idMatch.Groups['value'].Value -cne $ExpectedAppId) {
+    $currentAppId = $null
+    foreach ($line in ($text -split '\r?\n')) {
+        $idMatch = [regex]::Match($line, '^\s*id\s*:\s*(?<value>.+?)\s*$')
+        if ($idMatch.Success) {
+            if ($currentAppId -ceq $ExpectedAppId) {
+                throw 'The installed app entry does not contain a valid version.'
+            }
+            $currentAppId = $idMatch.Groups['value'].Value
             continue
         }
 
-        $versionMatch = [regex]::Match(
-            $block,
-            '(?m)^\s*version\s*:\s*(?<value>[0-9]+\.[0-9]+\.[0-9]+)\s*$'
-        )
-        if (-not $versionMatch.Success) {
-            throw 'The installed app entry does not contain a valid version.'
+        if ($currentAppId -ceq $ExpectedAppId) {
+            $versionMatch = [regex]::Match(
+                $line,
+                '^\s*version\s*:\s*(?<value>[0-9]+\.[0-9]+\.[0-9]+)\s*$'
+            )
+            if ($versionMatch.Success) {
+                return $versionMatch.Groups['value'].Value
+            }
         }
-        return $versionMatch.Groups['value'].Value
+    }
+
+    if ($currentAppId -ceq $ExpectedAppId) {
+        throw 'The installed app entry does not contain a valid version.'
     }
 
     return $null
