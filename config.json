@@ -1,7 +1,7 @@
 {
   "version": 1,
   "resolverBaseUrl": "https://streamedsports-resolver.fly.dev",
-  "streamedBaseUrl": "https://streamed.st",
+  "streamedBaseUrl": "https://streamed.pk",
   "allowedEmbedHosts": [
     "embed.st",
     "embedsports.top",
