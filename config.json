@@ -1,11 +1,12 @@
 {
   "version": 1,
   "resolverBaseUrl": "https://streamedsports-resolver.fly.dev",
-  "streamedBaseUrl": "https://streamed.pk",
+  "streamedBaseUrl": "https://streamed.st",
   "allowedEmbedHosts": [
     "embed.st",
     "embedsports.top",
     "streamed.pk",
+    "streamed.st",
     "voodc.com",
     "wigistream.to",
     "allstreaming.ws",
