@@ -2,6 +2,7 @@
   "version": 1,
   "resolverBaseUrl": "https://streamedsports-resolver.fly.dev",
   "streamedBaseUrl": "https://streamed.st",
+  "streamFreeBaseUrl": "https://strmfree.st",
   "allowedEmbedHosts": [
     "embed.st",
     "embedsports.top",
@@ -13,7 +14,8 @@
     "1l1l.pk",
     "daddyhd.com",
     "methstreams.com",
-    "streamfree.top"
+    "streamfree.top",
+    "strmfree.st"
   ],
   "debugOverlayEnabled": false,
   "adBlockHosts": [
