@@ -4,6 +4,7 @@
   "streamedBaseUrl": "https://streamed.st",
   "streamFreeBaseUrl": "https://strmfree.st",
   "timStreamsBaseUrl": "https://timst.cfd",
+  "xyzStreamsBaseUrl": "https://api.ppv.st",
   "allowedEmbedHosts": [
     "embed.st",
     "embedsports.top",
@@ -17,7 +18,8 @@
     "methstreams.com",
     "streamfree.top",
     "strmfree.st",
-    "epiembeds.online"
+    "epiembeds.online",
+    "embedindia.st"
   ],
   "debugOverlayEnabled": false,
   "adBlockHosts": [
