@@ -3,7 +3,7 @@
   "resolverBaseUrl": "https://streamedsports-resolver.fly.dev",
   "streamedBaseUrl": "https://streamed.st",
   "streamFreeBaseUrl": "https://strmfree.st",
-  "timStreamsBaseUrl": "https://timst.cfd",
+  "timStreamsBaseUrl": "https://timst.top",
   "xyzStreamsBaseUrl": "https://api.ppv.st",
   "allowedEmbedHosts": [
     "embed.st",
