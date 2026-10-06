@@ -23,12 +23,7 @@
     "grandemx.org",
     "embedindia.st"
   ],
-  "directSegmentHosts": [
-    "tiktokcdn-eu.com",
-    "tiktokcdn-us.com",
-    "strmd.st",
-    "strmfree.st"
-  ],
+  "directSegmentHosts": [],
   "debugOverlayEnabled": false,
   "adBlockHosts": [
     "adexchangeclear.com",
