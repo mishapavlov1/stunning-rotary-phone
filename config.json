@@ -1,9 +1,11 @@
 {
   "version": 1,
+  "streamedEnabled": false,
+  "daddyEnabled": true,
   "resolverBaseUrl": "https://streamedsports-resolver.fly.dev",
   "streamedBaseUrl": "https://streamed.st",
   "streamFreeBaseUrl": "https://strmfree.st",
-  "timStreamsBaseUrl": "https://timst.top",
+  "timStreamsBaseUrl": "https://tim-streams.com",
   "xyzStreamsBaseUrl": "https://api.ppv.st",
   "allowedEmbedHosts": [
     "embed.st",
