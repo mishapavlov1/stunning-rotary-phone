@@ -1,7 +1,7 @@
 {
   "version": 1,
   "streamedEnabled": false,
-  "daddyEnabled": true,
+  "daddyEnabled": false,
   "daddyStandaloneLeagues": [
     "NBA", "NFL", "NHL", "MLB", "AFL", "NRL", "A-League", "Premier League", "Champions League", "Europa League",
     "La Liga", "Serie A", "Bundesliga", "Formula 1", "F1", "ATP", "WTA", "UFC", "Super Rugby", "Big Bash", "!G League",
