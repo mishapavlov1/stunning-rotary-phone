@@ -57,6 +57,7 @@
     "tiktokcdn.com",
     "ttcdn-us.com"
   ],
+  "proxySegmentHosts": [],
   "debugOverlayEnabled": false,
   "adBlockHosts": [
     "adexchangeclear.com",
